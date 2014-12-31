@@ -39,8 +39,10 @@
         jasmineEnv.updateInterval = 1000;
 
         var htmlReporter = new jasmine.HtmlReporter();
-
         jasmineEnv.addReporter(htmlReporter);
+
+        window.jsApiReporter = new jasmine.JsApiReporter();
+        jasmineEnv.addReporter(window.jsApiReporter);
 
         jasmineEnv.specFilter = function(spec) {
             return htmlReporter.specFilter(spec);
